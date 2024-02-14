@@ -39,7 +39,7 @@ public class FirstPersonController : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX);
 
         // Shooting input
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && PauseMenu.paused != true)
         {
             Shoot();
         }

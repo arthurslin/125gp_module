@@ -14,17 +14,13 @@ public class StickToObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision!");
         if (!isStuck)
         {
-            // Check if the collision object has a Rigidbody
             Rigidbody otherRb = collision.gameObject.GetComponent<Rigidbody>();
-            if (otherRb != null)
+            if (otherRb != null && otherRb != collision.gameObject.CompareTag("Player"))
             {
-                // Stick to the collided object by making it a child
                 transform.parent = collision.transform;
                 rb.isKinematic = true;
-
                 isStuck = true;
             }
         }
