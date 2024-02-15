@@ -17,10 +17,12 @@ public class StickToObject : MonoBehaviour
         if (!isStuck)
         {
             Rigidbody otherRb = collision.gameObject.GetComponent<Rigidbody>();
-            if (otherRb != null && otherRb != collision.gameObject.CompareTag("Player"))
+            if (otherRb != null && otherRb != collision.gameObject.CompareTag("Player") && otherRb != collision.gameObject.CompareTag("Snowball"))
             {
                 transform.parent = collision.transform;
-                rb.isKinematic = true;
+
+                Destroy(rb);
+
                 isStuck = true;
             }
         }
