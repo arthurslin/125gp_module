@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,7 +66,6 @@ public class FirstPersonController : MonoBehaviour
 
         projectile.transform.parent = projectileContainer.transform;
     }
-
 
 }
 
